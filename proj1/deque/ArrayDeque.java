@@ -55,15 +55,23 @@ public class ArrayDeque<T> {
     }
 
     public T removeFirst() {
-        size -= 1;
-        nextFirst = Math.floorMod(nextFirst + 1, items.length);
-        return items[nextFirst];
+        if (size == 0) {
+            return null;
+        } else {
+            size -= 1;
+            nextFirst = Math.floorMod(nextFirst + 1, items.length);
+            return items[nextFirst];
+        }
     }
 
     public T removeLast() {
-        size -= 1;
-        nextLast = Math.floorMod(nextLast - 1, items.length);
-        return items[nextLast];
+        if (size == 0) {
+            return null;
+        } else {
+            size -= 1;
+            nextLast = Math.floorMod(nextLast - 1, items.length);
+            return items[nextLast];
+        }
     }
 
     public T get(int index) {
