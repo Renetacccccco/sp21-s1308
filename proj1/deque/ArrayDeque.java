@@ -54,6 +54,15 @@ public class ArrayDeque<T> {
         return size;
     }
 
+    public void printDeque() {
+        int current = Math.floorMod(nextFirst, items.length);
+        for (int i = 0; i < size; i++) {
+            current = Math.floorMod(current + 1, items.length);
+            System.out.print(items[current] + " ");
+        }
+        System.out.println();
+    }
+
     public T removeFirst() {
         if (size == 0) {
             return null;

@@ -47,7 +47,7 @@ public class LinkedListDeque<T> {
 
     public void printDeque() {
         Node current = sentinel.next;
-        while (current != null) {
+        while (current.item != null) {
             System.out.print(current.item + " ");
             current = current.next;
         }
